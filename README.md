@@ -24,7 +24,7 @@ To install SparsePro:
 git clone https://github.com/zhwm/SparsePro.git
 cd SparsePro
 pip install -r requirements.txt 
-gunzip dat/ld.txt.zip
+gunzip dat/ld.txt.gz
 ``` 
 
 To test the installation and display basic usage:
@@ -58,11 +58,11 @@ Example input files are included in the [dat](dat/) directory.
 
 SparsePro takes in a summary file of loci to be finemapped, z-scores files, LD files and annotations as inputs.
 
-1. **a summary file** contains two mandatory columns: names of z-score file and ld files. Optionally, names for annotation files can be included in the third column. An example can be find at [dat/zldanno.txt](dat/zldanno).
+1. **a summary file** contains two mandatory columns: names of z-score file and ld files. Optionally, names for annotation files can be included in the third column. An example can be find at [dat/zldanno.txt](dat/zldanno.txt).
 
 2. **zscore files** that contains two mandatory columns: variant IDs and z-scores. An example can be find at [dat/C1.txt](dat/C1.txt).
 
-3. **LD files** that contains Pearson correlation coefficient matrix. **Please make sure the REF/ALT alleles used in calculating LD are the same with the GWAS study!!** An example can be find at [dat/ld.txt](dat/ld.txt).
+3. **LD files** that contains Pearson correlation coefficient matrix. **Please make sure the REF/ALT alleles used in calculating LD are the same with the GWAS study!!** An example can be find at [dat/ld.txt](dat/ld.txt.gz).
 
 4. (optional) **annotation file** with entries indicating annotations status for variants. An example can be find at [dat/anno.txt](dat/anno.txt).
 
@@ -72,19 +72,19 @@ SparsePro takes in a summary file of loci to be finemapped, z-scores files, LD f
 ### Fine-mapping with GWAS summary statistics only
 
 ```
-$> python sparsepro_zld.py --zld dat/zldanno.txt --zdir dat --N 353570 --save result_no --prefix result_no --verbose --K 5 
+python sparsepro_zld.py --zld dat/zldanno.txt --zdir dat --N 353570 --save result_no --prefix result_no --verbose --K 5 
 ```
 
 ### Fine-mapping with GWAS summary statistics and estimate annotation enrichment
 
 ```
-$> python sparsepro_zld.py --zld dat/zldanno.txt --zdir dat --N 353570 --save result_no --prefix result_no --verbose --K 5 --anno anno --pthres 1e-5
+python sparsepro_zld.py --zld dat/zldanno.txt --zdir dat --N 353570 --save result_no --prefix result_no --verbose --K 5 --anno anno --pthres 1e-5
 ```
 
 ### Fine-mapping with both GWAS summary statistics and functional annotation information
 
 ```
-$> python sparsepro_zld.py --zld result_no/result_no.h2.txt --zdir dat --N 353570 --save result_anno --prefix result_anno --verbose --K 5 --anno anno --aW result_no/result_no.W1e-05.txt
+python sparsepro_zld.py --zld result_no/result_no.h2.txt --zdir dat --N 353570 --save result_anno --prefix result_anno --verbose --K 5 --anno anno --aW result_no/result_no.W1e-05.txt
 ```
 
 ## Output interpretation
