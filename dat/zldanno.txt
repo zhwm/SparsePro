@@ -1,0 +1,10 @@
+z	ld	anno
+C1.txt	ld.txt	anno.txt
+C2.txt	ld.txt	anno.txt
+C3.txt	ld.txt	anno.txt
+C4.txt	ld.txt	anno.txt
+C5.txt	ld.txt	anno.txt
+C6.txt	ld.txt	anno.txt
+C7.txt	ld.txt	anno.txt
+C8.txt	ld.txt	anno.txt
+C9.txt	ld.txt	anno.txt
