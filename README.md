@@ -1,6 +1,6 @@
 # SparsePro for fine-mapping with summary statistics and functional annotations
 
-SparsePro is a command line tool for efficient and accurate fine-mapping. 
+SparsePro is a command line tool for efficient and accurate fine-mapping. For genome-wide fine-mapping, please refer to [SparsePro_gw](https://github.com/zhwm/SparsePro_gw).
 
 ## Overview 
 
@@ -58,13 +58,13 @@ Example input files are included in the [dat](dat/) directory.
 
 SparsePro takes in a summary file of loci to be finemapped, z-scores files, LD files and annotations as inputs.
 
-1. **a summary file** contains two mandatory columns: names of z-score file and ld files. Optionally, names for annotation files can be included in the third column. An example can be find at [dat/zldanno.txt](dat/zldanno.txt).
+1. **a summary file** contains two mandatory columns: names of z-score file and ld files. Optionally, names for annotation files can be included in the third column. An example can be found at [dat/zldanno.txt](dat/zldanno.txt).
 
-2. **zscore files** that contains two mandatory columns: variant IDs and z-scores. An example can be find at [dat/C1.txt](dat/C1.txt).
+2. **zscore files** that contains two mandatory columns: variant IDs and z-scores. An example can be found at [dat/C1.txt](dat/C1.txt).
 
-3. **LD files** that contains Pearson correlation coefficient matrix. **Please make sure the REF/ALT alleles used in calculating LD are the same with the GWAS study!!** An example can be find at [dat/ld.txt](dat/ld.txt.gz).
+3. **LD files** that contains Pearson correlation coefficient matrix. **Please make sure the REF/ALT alleles used in calculating LD are the same as the GWAS study!!** An example can be found at [dat/ld.txt](dat/ld.txt.gz).
 
-4. (optional) **annotation file** with entries indicating annotations status for variants. An example can be find at [dat/anno.txt](dat/anno.txt).
+4. (optional) **annotation file** with entries indicating annotation status for variants. An example can be found at [dat/anno.txt](dat/anno.txt).
 
 
 ## Usage
@@ -148,5 +148,5 @@ C9.txt	ld.txt	anno.txt	7.51e-04	0.00e+00	2.41e-04	5.00e+00
 
 If you use this software, please cite:
 
-[Wenmin Zhang, Hamed Najafabadi, Yue Li. SparsePro: an efficient genome-wide fine-mapping method integrating summary statistics and functional annotations. bioRxiv 2021.10.04.463133](https://doi.org/10.1101/2021.10.04.463133)
+[Wenmin Zhang, Hamed Najafabadi, Yue Li. SparsePro: an efficient fine-mapping method integrating summary statistics and functional annotations. bioRxiv 2021.10.04.463133](https://doi.org/10.1101/2021.10.04.463133)
 
