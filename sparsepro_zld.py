@@ -102,6 +102,8 @@ class SparsePro(object):
 
 
 def get_XX_XtX_ytX_z(LD, Z, N):
+    assert not np.isnan(LD).any(), "The LD matrix contains NaN values."
+    assert not np.isnan(Z).any(), "The zscore files contains NaN values."
     XX = np.ones(len(Z)) * N
     XtX = LD * N
     ytX = Z * np.sqrt(N)
@@ -110,6 +112,8 @@ def get_XX_XtX_ytX_z(LD, Z, N):
 
 def get_HESS_h2_z(LD, Z, N, ptLD=0.2, ptp=1e-5):
     """calculate local heritabilities"""
+    assert not np.isnan(LD).any(), "The LD matrix contains NaN values."
+    assert not np.isnan(Z).any(), "The zscore files contains NaN values."
     zsquare = Z ** 2
     pvalmin = chi2.sf(max(zsquare), 1)
     idx_retain = []
@@ -130,9 +134,8 @@ def get_HESS_h2_z(LD, Z, N, ptLD=0.2, ptp=1e-5):
     var_b = np.max(zsquare[Indidx]) / N
     if h2_hess < 0.0001:
         h2_hess = 0.0001
-    if h2_hess > 0.2:
-        h2_hess = 0.2
-        print("Heritability estimates is exceeding 0.2, which is rare for a locus, please check!!")
+    if h2_hess > 0.9:
+        h2_hess = 0.9
     return h2_hess, var_b, pvalmin, P
 
 
