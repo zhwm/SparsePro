@@ -173,5 +173,5 @@ C9.txt	ld.txt	anno.txt	7.51e-04	2.77e-20	2.41e-04	5.00e+00
 
 If you use this software, please cite:
 
-[Wenmin Zhang, Hamed Najafabadi, Yue Li. SparsePro: an efficient fine-mapping method integrating summary statistics and functional annotations. bioRxiv 2021.10.04.463133](https://doi.org/10.1101/2021.10.04.463133)
+[Wenmin Zhang, Hamed Najafabadi, Yue Li. SparsePro: an efficient fine-mapping method integrating summary statistics and functional annotations. bioRxiv 2021.10.04.463133](https://doi.org/10.1371/journal.pgen.1011104)
 
